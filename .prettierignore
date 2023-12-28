@@ -1,0 +1,10 @@
+dist
+node_modules
+public
+.vscode
+.idea
+*.sh
+*.md
+
+src/assets
+stats.html

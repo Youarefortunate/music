@@ -1,0 +1,225 @@
+// 暗黑主题
+html.dark {
+  --menuBg: var(--el-bg-color-overlay);
+  --menuText: #fff;
+  --menuActiveText: var(--el-menu-active-color);
+  --menuHover: rgb(0 0 0 / 20%);
+  --subMenuBg: var(--el-menu-bg-color);
+  --subMenuActiveText: var(--el-menu-active-color);
+  --subMenuHover: rgb(0 0 0 / 20%);
+
+  --darkColor: #fff;
+
+  --darkBgColor: rgba(255, 255, 255, .4);
+
+  .navbar {
+    background-color: var(--el-bg-color);
+
+    .setting-container .setting-item:hover {
+      background: var(--el-fill-color-light);
+    }
+  }
+
+  .app .hideSidebar .el-menu-item.is-active {
+    background-color: var(--el-bg-color-overlay) !important;
+  }
+
+  .right-panel-btn {
+    background-color: var(--el-color-primary);
+  }
+
+  .hamburger:hover {
+    background-color: var(--el-fill-color-light);
+  }
+
+  .sidebar-container {
+    .el-menu-item.is-active .svg-icon {
+      fill: var(--el-color-primary);
+    }
+  }
+
+  // 底部播放器暗黑模式背景颜色
+  .footer-music-control {
+    box-shadow: none;
+    background-color: var(--el-bg-color-overlay);
+  }
+
+  // 暗黑模式下表单项底部tip
+  .form-item-help {
+    p {
+      color: var(--darkColor);
+    }
+  }
+
+  /* 克隆并自定义 ElMessage 样式，不会影响 ElMessage 原本样式，在 src/utils/message.ts 中调用自定义样式 ElMessage 方法即可，非暗黑模式在 src/style/element-plus.scss 文件进行了适配 */
+  .custom-message {
+    background-color: rgb(36 37 37) !important;
+    background-image: initial !important;
+    box-shadow:
+      rgb(13 13 13 / 12%) 0 3px 6px -4px,
+      rgb(13 13 13 / 8%) 0 6px 16px 0,
+      rgb(13 13 13 / 5%) 0 9px 28px 8px !important;
+
+    & .el-message__content {
+      color: var(--darkColor) !important;
+      pointer-events: all !important;
+      background-image: initial !important;
+    }
+
+    & .el-message__closeBtn {
+      &:hover {
+        color: rgb(255 255 255 / 85%);
+        background-color: rgb(255 255 255 / 12%);
+      }
+    }
+  }
+
+  // 评论组件暗夜模式样式
+  .comment-item .content {
+    & .be-replied {
+      background-color: rgb(245, 245, 245, .1) !important;
+    }
+  }
+
+  // 表情包组件
+  #emoji-continer {
+    .emoji-default {
+      background-color: var(--el-bg-color) !important;
+    }
+  }
+
+  // 首页-排行榜榜单、首页-最新音乐 暗夜模式样式
+  .official-top-list,
+  .newsong {
+
+    // 奇数项暗夜背景
+    & .songs .song-item:nth-child(2n+1) {
+      background-color: rgba(255, 255, 255, .1);
+    }
+
+    .songs .song-item {
+      &:hover {
+        background-color: var(--darkBgColor);
+      }
+
+      & .song-name {
+        color: var(--darkColor);
+      }
+    }
+  }
+
+  // 首页-最新音乐暗夜模式选中效果
+  .newsong {
+
+    // 选中项背景颜色
+    .songs .active-song-item {
+      background-color: rgba(255, 255, 255, .5) !important;
+    }
+  }
+
+  // 搜索框暗夜模式样式
+  .search-dialog {
+
+    // 热搜榜 暗夜模式样式
+    .hot-search,
+    .search-suggest {
+      background-color: var(--el-bg-color-overlay);
+
+      // 列表选中项选中效果
+      & .hot-list .hot-item:hover {
+        background-color: var(--darkBgColor);
+      }
+
+      // 搜索历史选中效果
+      & .search-history .history-list .item {
+        color: var(--darkColor);
+
+        &:hover {
+          background-color: var(--el-bg-color-overlay);
+        }
+      }
+    }
+
+    // 搜索建议 暗夜模式样式
+    .search-suggest {
+      & .content li:hover {
+        color: var(--el-color-white);
+        background-color: var(--darkBgColor);
+      }
+    }
+  }
+
+  // 搜索音乐 暗夜模式样式
+  .search-music {
+
+    // 相关用户
+    .user {
+      .user-item:hover {
+        background-color: var(--darkBgColor);
+
+        .user-info .signature span {
+          color: var(--el-color-white) !important;
+        }
+      }
+    }
+  }
+
+  // 当前播放列表 暗夜模式样式
+  .curplay-container {
+    .music-list {
+      & .current-row {
+        background-color: rgba(107, 107, 107, 0.4) !important;
+      }
+
+      .music-item {
+        color: var(--el-color-white);
+
+        &:hover {
+          & .singer-name {
+            color: var(--el-color-white);
+          }
+
+          background-color: rgba(255, 255, 255, .2) !important;
+        }
+
+        &:nth-child(2n) {
+          background-color: rgba(110, 110, 110, 0.1);
+        }
+      }
+    }
+  }
+
+  // 音乐详情页 暗夜模式样式
+  .music-container {
+    background-color: var(--el-color-black);
+    background-image: none;
+
+    .music-desc, .song-name, .singer-name {
+      color: var(--el-color-white) !important;
+    }
+
+    .music-content .left-song-cover .song-disc {
+      border: 15px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .edit-comment {
+      color: #c0c0c0;
+      background-color: rgba(237, 237, 237, 0.2);
+
+      &:hover {
+        color: var(--el-color-white);
+      }
+    }
+  }
+  // 歌词 暗夜模式样式
+  .lyric-active {
+    color: var(--el-color-white) !important;
+  }
+
+  // 其他登录方式文字 暗夜模式样式
+  .other-login {
+    &:hover {
+      color: var(--el-color-white);
+    }
+  }
+}

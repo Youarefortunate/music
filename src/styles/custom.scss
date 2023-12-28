@@ -1,0 +1,240 @@
+// 用户自定义样式(全局)
+
+// 推荐歌曲元素项
+.play-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 4;
+  right: 10px;
+  bottom: 20px;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+
+// 播放次数
+.counts {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 4;
+  background-color: rgba(236, 236, 236, 0.5);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 2px 7px;
+}
+
+.img-box {
+  position: relative;
+  cursor: pointer;
+  z-index: 3;
+  overflow: hidden;
+  min-width: 200px;
+  min-height: 200px;
+
+  &:hover {
+    .play-icon {
+      opacity: 1;
+    }
+  }
+
+  .song-name {
+    color: #393939;
+    cursor: pointer;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  .bg-cover {
+    min-width: 200px;
+    min-height: 200px;
+  }
+}
+
+// 通用标题字体样式
+.title-tip {
+  width: 100px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  .text {
+    font-size: 20px;
+  }
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+// 歌单创建者
+.songlist-creator {
+  width: 100%;
+  position: absolute;
+  left: 10px;
+  bottom: 15px;
+  display: flex;
+  align-items: center;
+  z-index: 4;
+}
+
+// 该歌单是否为精品歌单
+.high-qality {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  width: 100px;
+  height: 40px;
+  background-color: #F3B068;
+  z-index: 4;
+  transform: rotate(-45deg);
+  transform-origin: 15px 65px;
+  display: flex;
+  align-items: end;
+  overflow: hidden;
+  justify-content: center;
+  padding-bottom: 2px;
+}
+
+// dialog穿透(仅限dialog用作表单时的样式)
+.custom-dialog {
+  .el-dialog__header {
+    border-bottom: 1px solid rgb(234, 234, 234);
+
+    .el-dialog__title {
+      font-size: 15px;
+    }
+  }
+
+  .el-dialog__body {
+    border-bottom: 1px solid rgb(234, 234, 234);
+  }
+}
+
+// 全局空状态样式带icon
+// 结构
+// <div class="empty">
+//   <i-ep-FolderOpened class="empty-icon" />
+//   <span>暂无数据</span>
+// </div>
+.empty {
+  color: #999;
+  display: flex;
+  margin: 100px 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+
+  & empty-icon {
+    margin-bottom: 10px;
+  }
+
+  & span {
+    font-size: 13px;
+    margin-top: 15px;
+  }
+}
+
+// 全局空状态样式不带icon
+.empty-data {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .text, .reload {
+    font-size: 15px;
+    color: #6d6d6d;
+  }
+  .reload {
+    cursor: pointer;
+    color: #23AAF2;
+  }
+}
+
+// 全局触底样式
+// .is-bottom {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 90%;
+//   height: 100px;
+// }
+
+// 用户自定义tabs标签栏样式，element中的tabs深度穿透
+// :deep(.custom-tabs) {
+//   .el-tabs__item.is-active {
+//     font-size: 20px;
+//     font-weight: bold;
+//     transition: all 0.1s;
+//   }
+// }
+
+// 多个歌手时，每一个歌手后面出现一条斜杠，最后一个不出现
+.singer-name:not(:last-child)::after {
+  content: "/";
+  padding: 0 5px;
+}
+
+// 歌词
+.right-lyric {
+  min-width: 99%;
+  height: 500px;
+  overflow: hidden;
+
+  .music-info {
+    height: 20%;
+    white-space: nowrap;
+    margin-bottom: 20px;
+
+    .music-name {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .music-desc {
+      color: #636263;
+      font-size: 12px;
+    }
+  }
+
+  .lyric-container {
+    width: 100%;
+    height: calc(80% - 20px);
+    overflow: hidden;
+    list-style: none;
+    transition: 0.6s;
+    overflow-y: hidden;
+    // padding-top: 70px;
+    // -webkit-mask-image: linear-gradient(180deg,
+    //     hsla(0, 0%, 100%, 0) 0,
+    //     hsla(0, 0%, 100%, 0.6) 5%,
+    //     #fff 25%,
+    //     #fff 95%,
+    //     hsla(0, 0%, 100%, 0.6) 85%,
+    //     hsla(0, 0%, 100%, 0));
+
+    .lyric-content {
+      transition: 0.2s;
+
+      .lyric-item {
+        font-size: 13px;
+        color: #767676;
+        padding-bottom: 10px;
+      }
+
+      & .lyric-active {
+        color: black;
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 直接写会排除整个工程里面所有的相关文件都会被排除
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 忽略utils文件夹里面的某些指定文件
+src/utils/findColor.ts
+# 忽略测试代码文件夹
+src/testCode
+
+vite.config.ts.timestamp*

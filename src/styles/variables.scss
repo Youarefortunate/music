@@ -1,0 +1,42 @@
+// 全局SCSS变量
+:root {
+  // 侧边栏背景颜色
+  --menuBg: #fff;
+  // 未选中时文本颜色
+  --menuText: rgb(86, 86, 86);
+  // 菜单处于被选中时的文件和icon
+  --menuActiveText: rgb(236,65,65);
+  --menuHover: rgba(219, 219, 219, 0.3);
+
+  --subMenuBg: rgba(233,134,134,.1);
+  --subMenuActiveText: rgb(155, 155, 155);
+  --subMenuHover: rgb(228, 228, 228);
+
+  --menuBgActive: rgb(217 217 218);
+
+  // wang-editor textarea
+  --w-e-textarea-slight-border-color: var(--el-color-primary);
+  --w-e-textarea-slight-bg-color: rgb(var(--el-color-primary-rgb) 0.1);
+  --w-e-textarea-selected-border-color: var(--el-color-primary);
+}
+
+$menuBg: var(--menuBg);
+$menuText: var(--menuText);
+$menuActiveText: var(--menuActiveText);
+$menuHover: var(--menuHover);
+
+$subMenuBg: var(--subMenuBg);
+$subMenuActiveText: var(--subMenuActiveText);
+$subMenuHover: var(--subMenuHover);
+
+$menuBgActive: var(--menuBgActive);
+
+// 展开侧边栏宽度
+$sideBarWidth: 210px;
+// 隐藏侧边栏宽度
+$hideSideBarWidth: 54px;
+
+$logoAndNavHeight: 70px;
+$tagsViewHeight: 34px;
+
+$footerHeight: 100px;

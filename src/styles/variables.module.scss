@@ -1,0 +1,8 @@
+// 导出variables.scss文件的scss变量，提供给TS使用
+:export {
+  menuBg: $menuBg;
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  sideBarWidth: $sideBarWidth;
+  hideSideBarWidth: $hideSideBarWidth;
+}

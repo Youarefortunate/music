@@ -1,0 +1,96 @@
+// 这个很特殊，设置了：是否使用 teleport。设置成 true则会被追加到 append-to 的位置（默认为true），追加到body下面
+.el-popper.is-customized {
+  /* Set padding to ensure the height is 32px */
+  padding: 6px 12px;
+  background-color: rgb(153, 153, 153);
+  color: #fff;
+
+  & .el-popper__arrow::before {
+    background-color: rgb(153, 153, 153);
+    right: 0;
+  }
+}
+
+.el-form {
+  .el-form-item--large {
+
+    // margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// MessageBox 消息弹框样式覆盖（全局）
+.el-message-box {
+  padding: 10px 10px 20px 20px !important;
+
+  .el-message-box__header {
+    // padding: 10px;
+  }
+
+  .el-message-box__btns .el-button {
+    border-radius: 1px;
+  }
+}
+
+// 全局分割线样式
+.el-divider--horizontal {
+  margin: 15px 0 !important;
+}
+
+// 描述列表文字变粗
+.el-descriptions__label.el-descriptions__cell.is-bordered-label {
+  font-weight: 700 !important;
+}
+
+// 表单dialog自定义样式
+.custom-dialog {
+  .el-dialog__body {
+    padding: 20px 100px 20px 80px;
+  }
+
+  .el-button {
+    height: 35px;
+    padding: 8px 23px;
+    border-radius: 2px;
+  }
+}
+
+/* 克隆并自定义 ElMessage 样式，不会影响 ElMessage 原本样式，在 src/utils/message.ts 中调用自定义样式 ElMessage 方法即可，暗黑模式在 src/style/dark.scss 文件进行了适配 */
+.custom-message {
+  padding: 10px 13px !important;
+  background: #fff !important;
+  border-width: 0 !important;
+  box-shadow:
+    0 3px 6px -4px #0000001f,
+    0 6px 16px #00000014,
+    0 9px 28px 8px #0000000d !important;
+
+  &.el-message.is-closable .el-message__content {
+    padding-right: 17px !important;
+  }
+
+  & .el-message__content {
+    color: #000000d9 !important;
+    pointer-events: all !important;
+    background-image: initial !important;
+  }
+
+  & .el-message__icon {
+    margin-right: 8px !important;
+  }
+
+  & .el-message__closeBtn {
+    right: 9px !important;
+    border-radius: 4px;
+    outline: none;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
+    &:hover {
+      background-color: rgb(0 0 0 / 6%);
+    }
+  }
+}

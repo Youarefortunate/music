@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["esnext", "DOM"],
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "noLib": false,
+
+    "baseUrl": "./",
+    // 路劲映射，相对于baseUrl
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    // 组件名称defineOptions类型
+    "types": ["js-cookie", "unplugin-vue-define-options/macros-global"],
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true, // 未使用到变量是否报错
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true /* 允许默认导入 */,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */
+  },
+  "include": [
+    "src/**/*.ts",
+    // 自动导入TS类型声明文件引入
+    "src/**/*.d.ts",
+    "src/types/**/*.d.ts",
+    "src/**/*.vue",
+    "vite.config.ts"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.js"]
+  // "references": [{ "path": "./tsconfig.node.json" }]
+}
